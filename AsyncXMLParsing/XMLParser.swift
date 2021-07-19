@@ -5,6 +5,9 @@ struct XML: AsyncSequence {
 
   enum Element: Equatable {
     case element(name: String)
+    case text(String)
+    case comment(String)
+    case cdata(Data)
   }
 
   __consuming func makeAsyncIterator() -> AsyncThrowingStream<Element, Error>.AsyncIterator {
@@ -27,9 +30,52 @@ struct XML: AsyncSequence {
 extension XML {
   final class ParserDelegate: NSObject, XMLParserDelegate {
     var continuation: AsyncThrowingStream<XML.Element, Error>.Continuation! = nil
+    private var accumulatedText: String = ""
 
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    private func yieldAccumulatedTextIfAny() {
+      guard !self.accumulatedText.isEmpty else {
+        return
+      }
+      defer {
+        self.accumulatedText = ""
+      }
+      let isAllWhitespace = self.accumulatedText.allSatisfy(\.isWhitespace)
+      guard !isAllWhitespace else {
+        return
+      }
+      self.continuation.yield(.text(self.accumulatedText))
+    }
+
+    func parser(
+      _ parser: XMLParser,
+      didStartElement elementName: String,
+      namespaceURI: String?,
+      qualifiedName qName: String?,
+      attributes attributeDict: [String : String] = [:]
+    ) {
+      yieldAccumulatedTextIfAny()
       self.continuation.yield(.element(name: elementName))
+    }
+
+    func parser(
+      _ parser: XMLParser,
+      didEndElement elementName: String,
+      namespaceURI: String?,
+      qualifiedName qName: String?
+    ) {
+      yieldAccumulatedTextIfAny()
+    }
+
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+      self.accumulatedText.append(string)
+    }
+
+    func parser(_ parser: XMLParser, foundComment comment: String) {
+      self.continuation.yield(.comment(comment))
+    }
+
+    func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+      self.continuation.yield(.cdata(CDATABlock))
     }
 
     func parserDidEndDocument(_ parser: XMLParser) {

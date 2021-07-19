@@ -9,9 +9,13 @@ class XMLParserTests: XCTestCase {
       .element(name: "plist"),
       .element(name: "dict"),
       .element(name: "key"),
+      .text("name"),
       .element(name: "string"),
+      .text("Alice"),
       .element(name: "key"),
+      .text("age"),
       .element(name: "integer"),
+      .text("27"),
     ]
 
     let actual = try await XML(xml: input).reduce(into: []) { partialResult, xmlElement in
