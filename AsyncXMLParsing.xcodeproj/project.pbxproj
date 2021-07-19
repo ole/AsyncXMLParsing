@@ -12,18 +12,10 @@
 		5D65530426A5EFDF0044EC14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D65530326A5EFDF0044EC14 /* Assets.xcassets */; };
 		5D65530726A5EFDF0044EC14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D65530626A5EFDF0044EC14 /* Preview Assets.xcassets */; };
 		5D65531126A5EFDF0044EC14 /* AsyncXMLParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D65531026A5EFDF0044EC14 /* AsyncXMLParsingTests.swift */; };
-		5D65531B26A5EFDF0044EC14 /* AsyncXMLParsingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D65531A26A5EFDF0044EC14 /* AsyncXMLParsingUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5D65530D26A5EFDF0044EC14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D6552F426A5EFDD0044EC14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D6552FB26A5EFDD0044EC14;
-			remoteInfo = AsyncXMLParsing;
-		};
-		5D65531726A5EFDF0044EC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D6552F426A5EFDD0044EC14 /* Project object */;
 			proxyType = 1;
@@ -40,8 +32,6 @@
 		5D65530626A5EFDF0044EC14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D65530C26A5EFDF0044EC14 /* AsyncXMLParsingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncXMLParsingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D65531026A5EFDF0044EC14 /* AsyncXMLParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncXMLParsingTests.swift; sourceTree = "<group>"; };
-		5D65531626A5EFDF0044EC14 /* AsyncXMLParsingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncXMLParsingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D65531A26A5EFDF0044EC14 /* AsyncXMLParsingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncXMLParsingUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D65531326A5EFDF0044EC14 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,7 +57,6 @@
 			children = (
 				5D6552FE26A5EFDD0044EC14 /* AsyncXMLParsing */,
 				5D65530F26A5EFDF0044EC14 /* AsyncXMLParsingTests */,
-				5D65531926A5EFDF0044EC14 /* AsyncXMLParsingUITests */,
 				5D6552FD26A5EFDD0044EC14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,7 +66,6 @@
 			children = (
 				5D6552FC26A5EFDD0044EC14 /* AsyncXMLParsing.app */,
 				5D65530C26A5EFDF0044EC14 /* AsyncXMLParsingTests.xctest */,
-				5D65531626A5EFDF0044EC14 /* AsyncXMLParsingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,14 +95,6 @@
 				5D65531026A5EFDF0044EC14 /* AsyncXMLParsingTests.swift */,
 			);
 			path = AsyncXMLParsingTests;
-			sourceTree = "<group>";
-		};
-		5D65531926A5EFDF0044EC14 /* AsyncXMLParsingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D65531A26A5EFDF0044EC14 /* AsyncXMLParsingUITests.swift */,
-			);
-			path = AsyncXMLParsingUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,24 +135,6 @@
 			productReference = 5D65530C26A5EFDF0044EC14 /* AsyncXMLParsingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5D65531526A5EFDF0044EC14 /* AsyncXMLParsingUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D65532426A5EFDF0044EC14 /* Build configuration list for PBXNativeTarget "AsyncXMLParsingUITests" */;
-			buildPhases = (
-				5D65531226A5EFDF0044EC14 /* Sources */,
-				5D65531326A5EFDF0044EC14 /* Frameworks */,
-				5D65531426A5EFDF0044EC14 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D65531826A5EFDF0044EC14 /* PBXTargetDependency */,
-			);
-			name = AsyncXMLParsingUITests;
-			productName = AsyncXMLParsingUITests;
-			productReference = 5D65531626A5EFDF0044EC14 /* AsyncXMLParsingUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,10 +149,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					5D65530B26A5EFDF0044EC14 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 5D6552FB26A5EFDD0044EC14;
-					};
-					5D65531526A5EFDF0044EC14 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 5D6552FB26A5EFDD0044EC14;
 					};
@@ -218,7 +169,6 @@
 			targets = (
 				5D6552FB26A5EFDD0044EC14 /* AsyncXMLParsing */,
 				5D65530B26A5EFDF0044EC14 /* AsyncXMLParsingTests */,
-				5D65531526A5EFDF0044EC14 /* AsyncXMLParsingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,13 +184,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5D65530A26A5EFDF0044EC14 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D65531426A5EFDF0044EC14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,14 +210,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D65531226A5EFDF0044EC14 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D65531B26A5EFDF0044EC14 /* AsyncXMLParsingUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -282,11 +217,6 @@
 			isa = PBXTargetDependency;
 			target = 5D6552FB26A5EFDD0044EC14 /* AsyncXMLParsing */;
 			targetProxy = 5D65530D26A5EFDF0044EC14 /* PBXContainerItemProxy */;
-		};
-		5D65531826A5EFDF0044EC14 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D6552FB26A5EFDD0044EC14 /* AsyncXMLParsing */;
-			targetProxy = 5D65531726A5EFDF0044EC14 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -517,52 +447,6 @@
 			};
 			name = Release;
 		};
-		5D65532526A5EFDF0044EC14 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UQBP8YQ495;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.oleb.AsyncXMLParsingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AsyncXMLParsing;
-			};
-			name = Debug;
-		};
-		5D65532626A5EFDF0044EC14 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UQBP8YQ495;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.oleb.AsyncXMLParsingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AsyncXMLParsing;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,15 +473,6 @@
 			buildConfigurations = (
 				5D65532226A5EFDF0044EC14 /* Debug */,
 				5D65532326A5EFDF0044EC14 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D65532426A5EFDF0044EC14 /* Build configuration list for PBXNativeTarget "AsyncXMLParsingUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D65532526A5EFDF0044EC14 /* Debug */,
-				5D65532626A5EFDF0044EC14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
