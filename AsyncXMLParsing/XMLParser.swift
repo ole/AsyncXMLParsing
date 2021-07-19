@@ -14,9 +14,10 @@ struct XML: AsyncSequence {
     let stream = AsyncThrowingStream(XML.Element.self, bufferingPolicy: .unbounded) { continuation in
       parserDelegate.continuation = continuation
     }
-    Task {
+    // Don’t use `Task { … }` for the parse operation because `XMLParser` blocks its thread.
+    DispatchQueue.global().async {
       withExtendedLifetime(parserDelegate) {
-        parser.parse()
+        _ = parser.parse()
       }
     }
     return stream.makeAsyncIterator()
